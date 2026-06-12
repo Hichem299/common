@@ -16,15 +16,8 @@ jobs:
           sudo apt-get update -y
           sudo apt-get install -y bc bison build-essential flex git libssl-dev libelf-dev lz4 zip wget
 
-      - name: Download Proton-Clang
-        run: |
-          mkdir -p $HOME/tc
-          wget -qO- https://github.com/kdrag0n/proton-clang/archive/refs/heads/master.tar.gz | tar -xz --strip-components=1 -C $HOME/tc
-
       - name: Build Image
-        run: |
-          export PATH="$HOME/tc/bin:$PATH"
-          export ARCH=arm64
+        run: |         
           make -j$(($(nproc)*30)) Image
 
       - name: Package Magisk zip
