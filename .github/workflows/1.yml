@@ -19,7 +19,6 @@ jobs:
 
       - name: Build Image
         run: |
-          cd kernel_source
           make -j$(($(nproc)*30)) Image
 
       - name: Package Magisk zip
