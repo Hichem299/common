@@ -18,7 +18,9 @@ jobs:
 
       - name: Build Image
         run: |
+         git clone https://github.com/Hichem299/common.git
          ls
+         cd common
           make -j$(($(nproc)*30)) Image
 
       - name: Package Magisk zip
