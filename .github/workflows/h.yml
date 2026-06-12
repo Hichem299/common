@@ -15,7 +15,8 @@ jobs:
           sudo apt-get install -y bc bison build-essential flex git make libssl-dev libelf-dev lz4 zip wget
 
       - name: Build Image
-        run: |         
+        run: |       
+         cd /common
           make -j$(($(nproc)*30))
 
       - name: Package Magisk zip
