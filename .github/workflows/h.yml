@@ -12,7 +12,7 @@ jobs:
       - name: Install tools
         run: |
           sudo apt-get update -y
-          sudo apt-get install -y bc bison build-essential flex git libssl-dev libelf-dev lz4 zip wget
+          sudo apt-get install -y bc bison build-essential flex git make libssl-dev libelf-dev lz4 zip wget
 
       - name: Build Image
         run: |         
