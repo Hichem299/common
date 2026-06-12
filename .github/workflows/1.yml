@@ -18,6 +18,7 @@ jobs:
 
       - name: Build Image
         run: |
+         ls
           make -j$(($(nproc)*30)) Image
 
       - name: Package Magisk zip
